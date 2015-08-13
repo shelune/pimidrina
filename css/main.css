@@ -17,6 +17,7 @@ html {
     font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    box-sizing: border-box;
 }
 
 *, *:after, *:after {
@@ -107,6 +108,7 @@ textarea {
 body {
     background: #353B4A none repeat scroll 0% 0%;
     font-family: "Open Sans";
+    text-align: left;
 }
 
 a {
@@ -118,8 +120,100 @@ ul {
     list-style: none;
 }
 
+.iPhone-big-wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
 
+.iPhone-wrapper {
+    width: 320px;
+    height: 677px;
+    position: absolute;
+    margin: 144px 0 0 50px;
+    z-index: 3;
+}
 
+.iPhone {
+    z-index: 2;
+    width: 320px;
+    height: 677px;
+    background: transparent url("../img/iphone-frame.png") no-repeat scroll 0% 0%;
+    position: absolute;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+.page1 {
+    font-size: 50px;
+    display: table;
+}
+
+.fp-tableCell {
+    height: 955px;
+}
+
+.page1 .content {
+    width: 550px;
+    height: 425px;
+    position: relative;
+    left: 47%;
+    margin-bottom: 16px;
+}
+
+.inner {
+    display: block;
+}
+
+.hidden-text {
+    text-indent: -100000px;
+    font-size: 32px;
+    float: left;
+    margin: 0;
+    display: none;
+}
+
+.page1 .description {
+    color: #C5CEE3;
+    line-height: 60px;
+    margin: 60px 0 32px 0;
+}
+
+.page1 a:hover {
+    text-decoration: underline;
+    outline: 0px none;
+}
+
+.arrow {
+    width: 100%;
+    background: transparent url("../img/arrow.png") no-repeat scroll center center;
+    height: 30px;
+    bottom: 20px;
+    position: fixed;
+}
+
+.bullets {
+    position: fixed;
+    right: 20px;
+    width: 20px;
+    top: 45%;
+    padding: 0;
+    margin: 0;
+}
+
+.bullets li {
+    width: 4px;
+    height: 4px;
+    background: transparent url("../img/bullet.png") no-repeat scroll 0% 0%;
+    margin: 20px auto;
+}
+
+.bullets li.active {
+    width: 8px;
+    height: 8px;
+    background: transparent url("../img/active-bullet.png") no-repeat scroll 0% 0%;
+}
 
 
 
