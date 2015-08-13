@@ -105,6 +105,13 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* GENERAL STUFFs
+                START */
+
+h2, h3, h4 {
+    font-weight: 300;
+}
+
 body {
     background: #353B4A none repeat scroll 0% 0%;
     font-family: "Open Sans";
@@ -125,6 +132,12 @@ ul {
     width: 1000px;
 }
 
+/* GENERAL STUFFs
+                END */
+
+/* GENERAL WRAPPERs
+                START */
+
 .iPhone-wrapper {
     width: 320px;
     height: 677px;
@@ -142,49 +155,38 @@ ul {
 }
 
 .wrapper {
+    width: 1000px;
     margin: 0 auto;
+    padding: 0;
 }
 
-.page1 {
-    font-size: 50px;
-    display: table;
+/* GENERAL WRAPPERs
+                END */
+
+/* IMAGES INSIDE IPHONES
+                        START */
+.fp-slides {
+    width: 272px;
+    height: 479px;
+    display: inline-block;
+    margin-top: 102px;
+    margin-left: 27px;
 }
 
-.fp-tableCell {
-    height: 955px;
-}
-
-.page1 .content {
-    width: 550px;
-    height: 425px;
-    position: relative;
-    left: 47%;
-    margin-bottom: 16px;
-}
-
-.inner {
-    display: block;
-}
-
-.hidden-text {
-    text-indent: -100000px;
-    font-size: 32px;
-    float: left;
-    margin: 0;
+.fp-slides img {
+    position: absolute;
     display: none;
 }
 
-.page1 .description {
-    color: #C5CEE3;
-    line-height: 60px;
-    margin: 60px 0 32px 0;
+.fp-slides img.active {
+    display: block;
 }
 
-.page1 a:hover {
-    text-decoration: underline;
-    outline: 0px none;
-}
+/* IMAGES INSIDE IPHONES
+                        END */
 
+/* ARROW AND BULLET
+                    START */
 .arrow {
     width: 100%;
     background: transparent url("../img/arrow.png") no-repeat scroll center center;
@@ -214,6 +216,70 @@ ul {
     height: 8px;
     background: transparent url("../img/active-bullet.png") no-repeat scroll 0% 0%;
 }
+
+/* ARROW AND BULLETS
+                    END */
+
+/* INVIDUAL CONTENTS / TEXT IN PAGE
+                                    START */
+
+.fp-section {
+    color: #C5CEE3;
+}
+
+.inner {
+    display: block;
+}
+
+.page1 {
+    font-size: 50px;
+}
+
+.page1 .content {
+    width: 550px;
+    height: 425px;
+    margin-bottom: 16px;
+    float: right;
+}
+
+.hidden-text {
+    text-indent: -100000px;
+    font-size: 32px;
+    float: left;
+    margin: 0;
+    display: none;
+}
+
+.page1 .description {
+    line-height: 60px;
+    margin: 60px 0 32px 0;
+}
+
+.page1 a:hover {
+    text-decoration: underline;
+    outline: 0px none;
+}
+
+.page2 .content {
+    width: 400px;
+    height: 300px;
+}
+
+.page2 h2 {
+    font-size: 50px;
+    color: #fff;
+    line-height: 60px;
+    margin: 0 0 30px 0;
+}
+
+.page2 .description {
+    font-size: 21px;
+    line-height: 40px;
+    margin: 21px 0;
+}
+
+/* INVIDUAL CONTENTS / TEXT IN PAGE
+                                    END */
 
 
 
