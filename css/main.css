@@ -296,10 +296,21 @@ ul {
     padding-top: 380px;
 }
 
-.page3 .description {
+.page3 .description,  .page4 .description{
     font-size: 21px;
     line-height: 40px;
 }
+
+.page4 .content {
+    width: 670px;
+    margin: 0 auto;
+}
+
+.page4 .inner {
+    padding-top: 67px;
+    text-align: center;
+}
+
 
 /* INVIDUAL CONTENTS / TEXT IN PAGE
                                     END */

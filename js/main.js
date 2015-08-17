@@ -58,6 +58,8 @@ $(document).ready(function () {
             initialTopPos = winHeight / 2 - phoneHeight / 2;
         }
         iPhone.css("margin-top", initialTopPos);
+
+        $('.page4 .content').height(winHeight - 100);
     };
 
     calculate();
@@ -173,6 +175,22 @@ $(document).ready(function () {
                 }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(3).addClass('active');
+
+                $('.iPhone-wrapper').animate({
+                    "margin-top": (initialTopPos + 200) + "px"
+                });
+
+                $('.iPhone-wrapper img.third').fadeOut(700, function () {
+                    $(this).removeClass('active');
+                });
+                $('.iPhone-wrapper img.second').fadeIn(700, function () {
+                    $(this).addClass('active');
+                });
+
+                $('.iPhone-wrapper').rotate(90, 700, true);
+
+                $('.page3 .content').fadeOut(700);
+                $('.page4 .content').show();
             }
 
             if ((index === 4) && (direction === "up")) {
@@ -182,6 +200,23 @@ $(document).ready(function () {
                 }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(2).addClass('active');
+
+                $('.iPhone-wrapper').animate({
+                    "margin-top": (initialTopPos - 100) + "px",
+                    "margin-left": "340px"
+                });
+
+                $('.iPhone-wrapper img.second').fadeOut(700, function () {
+                    $(this).removeClass('active');
+                });
+                $('.iPhone-wrapper img.third').fadeIn(700, function () {
+                    $(this).addClass('active');
+                });
+
+                $('.iPhone-wrapper').rotate(90, 700);
+
+                $('.page4 .content').fadeOut(700);
+                $('.page3 .content').show();
             }
 
             if ((index === 4) && (direction === "down")) {
