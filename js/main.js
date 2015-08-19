@@ -5,7 +5,7 @@
 
 var iPhone = $('.iPhone-wrapper'),
     slideWrapper = $('.iPhone-slides'),
-    themeWrapper = $('themes-wrapper'),
+    themesWrapper = $('themes-wrapper'),
     winHeight,
     phoneHeight,
     themeIndex = 1,
@@ -42,46 +42,46 @@ $.fn.rotate = function (angle, duration, reverse) {
 var resetTheme = function () {
     switch (themeIndex) {
     case 0:
-        themeWrapper.find('.fifth').css("background-color", colors[4]);
-        themeWrapper.find('.forth').css("background-color", colors[3]);
-        themeWrapper.find('.third').css("background-color", colors[2]);
-        themeWrapper.find('.second').css("background-color", colors[1]);
-        themeWrapper.find('.first').css("background-color", colors[0]);
+        themesWrapper.find('.fifth').css("background-color", colors[4]);
+        themesWrapper.find('.forth').css("background-color", colors[3]);
+        themesWrapper.find('.third').css("background-color", colors[2]);
+        themesWrapper.find('.second').css("background-color", colors[1]);
+        themesWrapper.find('.first').css("background-color", colors[0]);
         break;
     case 1:
-        themeWrapper.find('.fifth').css("background-color", colors[5]);
-        themeWrapper.find('.forth').css("background-color", colors[4]);
-        themeWrapper.find('.third').css("background-color", colors[3]);
-        themeWrapper.find('.second').css("background-color", colors[2]);
-        themeWrapper.find('.first').css("background-color", colors[1]);
+        themesWrapper.find('.fifth').css("background-color", colors[5]);
+        themesWrapper.find('.forth').css("background-color", colors[4]);
+        themesWrapper.find('.third').css("background-color", colors[3]);
+        themesWrapper.find('.second').css("background-color", colors[2]);
+        themesWrapper.find('.first').css("background-color", colors[1]);
         break;
     case 2:
-        themeWrapper.find('.fifth').css("background-color", colors[0]);
-        themeWrapper.find('.forth').css("background-color", colors[5]);
-        themeWrapper.find('.third').css("background-color", colors[4]);
-        themeWrapper.find('.second').css("background-color", colors[3]);
-        themeWrapper.find('.first').css("background-color", colors[2]);
+        themesWrapper.find('.fifth').css("background-color", colors[0]);
+        themesWrapper.find('.forth').css("background-color", colors[5]);
+        themesWrapper.find('.third').css("background-color", colors[4]);
+        themesWrapper.find('.second').css("background-color", colors[3]);
+        themesWrapper.find('.first').css("background-color", colors[2]);
         break;
     case 3:
-        themeWrapper.find('.fifth').css("background-color", colors[1]);
-        themeWrapper.find('.forth').css("background-color", colors[0]);
-        themeWrapper.find('.third').css("background-color", colors[5]);
-        themeWrapper.find('.second').css("background-color", colors[4]);
-        themeWrapper.find('.first').css("background-color", colors[3]);
+        themesWrapper.find('.fifth').css("background-color", colors[1]);
+        themesWrapper.find('.forth').css("background-color", colors[0]);
+        themesWrapper.find('.third').css("background-color", colors[5]);
+        themesWrapper.find('.second').css("background-color", colors[4]);
+        themesWrapper.find('.first').css("background-color", colors[3]);
         break;
     case 4:
-        themeWrapper.find('.fifth').css("background-color", colors[2]);
-        themeWrapper.find('.forth').css("background-color", colors[1]);
-        themeWrapper.find('.third').css("background-color", colors[0]);
-        themeWrapper.find('.second').css("background-color", colors[5]);
-        themeWrapper.find('.first').css("background-color", colors[4]);
+        themesWrapper.find('.fifth').css("background-color", colors[2]);
+        themesWrapper.find('.forth').css("background-color", colors[1]);
+        themesWrapper.find('.third').css("background-color", colors[0]);
+        themesWrapper.find('.second').css("background-color", colors[5]);
+        themesWrapper.find('.first').css("background-color", colors[4]);
         break;
     case 5:
-        themeWrapper.find('.fifth').css("background-color", colors[3]);
-        themeWrapper.find('.forth').css("background-color", colors[2]);
-        themeWrapper.find('.third').css("background-color", colors[1]);
-        themeWrapper.find('.second').css("background-color", colors[0]);
-        themeWrapper.find('.first').css("background-color", colors[5]);
+        themesWrapper.find('.fifth').css("background-color", colors[3]);
+        themesWrapper.find('.forth').css("background-color", colors[2]);
+        themesWrapper.find('.third').css("background-color", colors[1]);
+        themesWrapper.find('.second').css("background-color", colors[0]);
+        themesWrapper.find('.first').css("background-color", colors[5]);
         break;
     }
     themeIndex += 1;
@@ -111,6 +111,8 @@ $(document).ready(function () {
         iPhone.css("margin-top", initialTopPos);
 
         $('.page4 .content').height(winHeight - 100);
+
+        themesWrapper.css("margin-top", winHeight / 2 - 316 / 2);
     };
 
     calculate();
@@ -289,12 +291,17 @@ $(document).ready(function () {
                     "margin-top": (initialTopPos + 200) + "px"
                 }, 700);
 
-                $('.iPhone-wrapper img.third').fadeOut(700, function () {
-                    $(this).removeClass('active');
+                $('.iPhone-wrapper img.fourth').animate({
+                    "margin-left": "0px"
+                }, 400, function () {
+                    $('.iPhone-wrapper img.fourth').fadeOut(700, function () {
+                        $(this).removeClass('active');
+                    });
+                    $('.iPhone-wrapper img.second').fadeIn(700, function () {
+                        $(this).addClass('active');
+                    });
                 });
-                $('.iPhone-wrapper img.second').fadeIn(700, function () {
-                    $(this).addClass('active');
-                });
+
             }
 
             if ((index === 5) && (direction === "down")) {
@@ -308,7 +315,7 @@ $(document).ready(function () {
                     "margin-top": "-800px"
                 }, 700, function () {
                     $('.main-footer').animate({
-                        "bottom": "0px;"
+                        "bottom": "0"
                     }, 300, "swing");
                 });
             }
@@ -320,10 +327,13 @@ $(document).ready(function () {
                 $('.page6 .inner').fadeOut(900);
                 $('.page5 .inner').show();
 
-                $('.iPhone-wrapper').animate({
-                    "margin-top": initialTopPos + "px",
-                    "margin-left": "60px"
-                }, 700);
+                $('.main-footer').animate({
+                    "bottom": "-220px"
+                }, 300, "swing", function () {
+                    $('.iPhone-wrapper').animate({
+                        "margin-top": initialTopPos + "px"
+                    }, 700);
+                });
 
                 $('.iPhone-wrapper img.second').fadeOut(function () {
                     $(this).removeClass('active');
@@ -334,6 +344,8 @@ $(document).ready(function () {
                         "margin-left": "-220px"
                     }, 400);
                 });
+
+
             }
 
         }
