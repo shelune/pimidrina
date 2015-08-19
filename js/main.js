@@ -9,7 +9,7 @@ var iPhone = $('.iPhone-wrapper'),
     winHeight,
     phoneHeight,
     themeIndex = 1,
-    colors = ["7db3b8", "df6e51", "005670", "87cbd8", "b9ce6c", "cc545a"],
+    colors = ["#7db3b8", "#df6e51", "#005670", "#87cbd8", "#b9ce6c", "#cc545a"],
     scale = '',
     initialTopPos = 50,
     retina = window.devicePixelRatio > 1,
@@ -37,6 +37,57 @@ $.fn.rotate = function (angle, duration, reverse) {
         };
         $({deg: 0}).animate({deg: angle}, args);
     });
+};
+
+var resetTheme = function () {
+    switch (themeIndex) {
+    case 0:
+        themeWrapper.find('.fifth').css("background-color", colors[4]);
+        themeWrapper.find('.forth').css("background-color", colors[3]);
+        themeWrapper.find('.third').css("background-color", colors[2]);
+        themeWrapper.find('.second').css("background-color", colors[1]);
+        themeWrapper.find('.first').css("background-color", colors[0]);
+        break;
+    case 1:
+        themeWrapper.find('.fifth').css("background-color", colors[5]);
+        themeWrapper.find('.forth').css("background-color", colors[4]);
+        themeWrapper.find('.third').css("background-color", colors[3]);
+        themeWrapper.find('.second').css("background-color", colors[2]);
+        themeWrapper.find('.first').css("background-color", colors[1]);
+        break;
+    case 2:
+        themeWrapper.find('.fifth').css("background-color", colors[0]);
+        themeWrapper.find('.forth').css("background-color", colors[5]);
+        themeWrapper.find('.third').css("background-color", colors[4]);
+        themeWrapper.find('.second').css("background-color", colors[3]);
+        themeWrapper.find('.first').css("background-color", colors[2]);
+        break;
+    case 3:
+        themeWrapper.find('.fifth').css("background-color", colors[1]);
+        themeWrapper.find('.forth').css("background-color", colors[0]);
+        themeWrapper.find('.third').css("background-color", colors[5]);
+        themeWrapper.find('.second').css("background-color", colors[4]);
+        themeWrapper.find('.first').css("background-color", colors[3]);
+        break;
+    case 4:
+        themeWrapper.find('.fifth').css("background-color", colors[2]);
+        themeWrapper.find('.forth').css("background-color", colors[1]);
+        themeWrapper.find('.third').css("background-color", colors[0]);
+        themeWrapper.find('.second').css("background-color", colors[5]);
+        themeWrapper.find('.first').css("background-color", colors[4]);
+        break;
+    case 5:
+        themeWrapper.find('.fifth').css("background-color", colors[3]);
+        themeWrapper.find('.forth').css("background-color", colors[2]);
+        themeWrapper.find('.third').css("background-color", colors[1]);
+        themeWrapper.find('.second').css("background-color", colors[0]);
+        themeWrapper.find('.first').css("background-color", colors[5]);
+        break;
+    }
+    themeIndex += 1;
+    if (themeIndex >= colors.length) {
+        themeIndex = 0;
+    }
 };
 
 
@@ -119,10 +170,6 @@ $(document).ready(function () {
             }
 
             if ((index === 2) && (direction === "down")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(2).addClass('active');
                 $('.page2 .inner').fadeOut(700);
@@ -144,10 +191,6 @@ $(document).ready(function () {
             }
 
             if ((index === 3) && (direction === "up")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(1).addClass('active');
                 $('.page3 .inner').fadeOut(700);
@@ -169,10 +212,6 @@ $(document).ready(function () {
             }
 
             if ((index === 3) && (direction === "down")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(3).addClass('active');
 
@@ -194,10 +233,6 @@ $(document).ready(function () {
             }
 
             if ((index === 4) && (direction === "up")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(2).addClass('active');
 
@@ -220,39 +255,85 @@ $(document).ready(function () {
             }
 
             if ((index === 4) && (direction === "down")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(4).addClass('active');
+
+                $('.page4 .inner').fadeOut(700);
+                $('.page5 .inner').show();
+
+                $('.iPhone-wrapper').animate({
+                    "margin-top": initialTopPos + "px",
+                    "margin-left": "60px"
+                }, 700);
+
+                $('.iPhone-wrapper img.second').fadeOut(function () {
+                    $(this).removeClass('active');
+                });
+                $('.iPhone-wrapper img.fourth').fadeIn(function () {
+                    $(this).addClass('active');
+                    $(this).delay(500).animate({
+                        "margin-left": "-220px"
+                    }, 400);
+                });
             }
 
             if ((index === 5) && (direction === "up")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(3).addClass('active');
+
+                $('.page5 .inner').fadeOut(700);
+                $('.page4 .inner').show();
+
+                $('.iPhone-wrapper').animate({
+                    "margin-left": "340px",
+                    "margin-top": (initialTopPos + 200) + "px"
+                }, 700);
+
+                $('.iPhone-wrapper img.third').fadeOut(700, function () {
+                    $(this).removeClass('active');
+                });
+                $('.iPhone-wrapper img.second').fadeIn(700, function () {
+                    $(this).addClass('active');
+                });
             }
 
             if ((index === 5) && (direction === "down")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(5).addClass('active');
+
+                $('.page5 .inner').fadeOut(900);
+                $('.page6 .inner').show();
+
+                $('.iPhone-wrapper').animate({
+                    "margin-top": "-800px"
+                }, 700, function () {
+                    $('.main-footer').animate({
+                        "bottom": "0px;"
+                    }, 300, "swing");
+                });
             }
 
             if ((index === 6) && (direction === "up")) {
-                $('.arrow').animate({
-                    "bottom": "20px",
-                    opacity: 1
-                }, 300);
                 $('.bullets li.active').removeClass('active');
                 $('.bullets li').eq(4).addClass('active');
+
+                $('.page6 .inner').fadeOut(900);
+                $('.page5 .inner').show();
+
+                $('.iPhone-wrapper').animate({
+                    "margin-top": initialTopPos + "px",
+                    "margin-left": "60px"
+                }, 700);
+
+                $('.iPhone-wrapper img.second').fadeOut(function () {
+                    $(this).removeClass('active');
+                });
+                $('.iPhone-wrapper img.fourth').fadeIn(function () {
+                    $(this).addClass('active');
+                    $(this).delay(500).animate({
+                        "margin-left": "-220px"
+                    }, 400);
+                });
             }
 
         }

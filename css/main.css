@@ -296,7 +296,7 @@ ul {
     padding-top: 380px;
 }
 
-.page3 .description,  .page4 .description{
+.page3 .description,  .page4 .description, .page5 .description {
     font-size: 21px;
     line-height: 40px;
 }
@@ -309,6 +309,55 @@ ul {
 .page4 .inner {
     padding-top: 67px;
     text-align: center;
+}
+
+.page5 .content {
+    width: 560px;
+    height: 180px;
+    float: right;
+}
+
+.page6 .content {
+    height: 500px;
+    text-align: center;
+}
+
+.page6 .header {
+    margin: 40px auto 60px auto;
+}
+
+.main-footer {
+    background: #3e4557;
+    text-align: center;
+    height: 216px;
+    width: 100%;
+    left: 0;
+    position: fixed;
+}
+
+.mail-us, .follow-us {
+    display: inline-block;
+
+}
+
+.lower-footer {
+    border-top: 1px solid #353B4A;
+    display: block;
+    line-height: 64px;
+}
+
+.lower-footer li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.lower-footer a {
+    opacity: 0.34;
+}
+
+.lower-footer a:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
 
