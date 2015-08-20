@@ -195,6 +195,34 @@ ul {
 /* IMAGES INSIDE IPHONES
                         END */
 
+/* IPHONE BACKGROUNDs
+                    START */
+
+.themes-wrapper {
+    position: absolute;
+    width: 790px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.theme {
+    width: 160px;
+    height: 316px;
+    display: inline-block;
+}
+
+.iPhone-slides {
+    width: 272px;
+    height: 479px;
+    overflow: hidden;
+    display: inline-block;
+    margin-top: 102px;
+    background-color: #78b0b5;
+}
+
+/* IPHONE BACKGROUNDs
+                    END */
+
 /* ARROW AND BULLET
                     START */
 .arrow {

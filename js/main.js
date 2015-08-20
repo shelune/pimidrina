@@ -5,9 +5,10 @@
 
 var iPhone = $('.iPhone-wrapper'),
     slideWrapper = $('.iPhone-slides'),
-    themesWrapper = $('themes-wrapper'),
+    themesWrapper = $('.themes-wrapper'),
     winHeight,
     phoneHeight,
+    themesHeight,
     themeIndex = 1,
     colors = ["#7db3b8", "#df6e51", "#005670", "#87cbd8", "#b9ce6c", "#cc545a"],
     scale = '',
@@ -90,13 +91,30 @@ var resetTheme = function () {
     }
 };
 
+var showNextTheme = function () {
+    var time = new Date().getTime();
+    if (time - 0 > 2000) {
+        if (themesWrapper.is(":visible")) {
+            slideWrapper.css("background-color", colors[themeIndex]);
+            themesWrapper.find(".first").animate({
+                "margin-left": "-160px"
+            }, function () {
+                $(this).css("margin-left", "30px");
+                resetTheme();
+            });
+        }
+    }
+    setTimeout(showNextTheme, 2000);
+};
+
+resetTheme();
 
 $(document).ready(function () {
 
     var calculate = function () {
         winHeight = $(window).height();
         phoneHeight = iPhone.height();
-        console.log(winHeight + "__" + phoneHeight + "__" + retina);
+        themesHeight = themesWrapper.height();
         if (phoneHeight > winHeight) {
             scale = ' scale(0.8)';
             iPhone.css({
@@ -113,6 +131,7 @@ $(document).ready(function () {
         $('.page4 .content').height(winHeight - 100);
 
         themesWrapper.css("margin-top", winHeight / 2 - 316 / 2);
+        console.log(winHeight + "__" + phoneHeight + "__" + themesHeight + "__" + retina);
     };
 
     calculate();
