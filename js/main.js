@@ -6,6 +6,7 @@
 var iPhone = $('.iPhone-wrapper'),
     slideWrapper = $('.iPhone-slides'),
     themesWrapper = $('.themes-wrapper'),
+    lastTimeChecked = 0,
     winHeight,
     phoneHeight,
     themesHeight,
@@ -41,49 +42,47 @@ $.fn.rotate = function (angle, duration, reverse) {
 };
 
 var resetTheme = function () {
-    switch (themeIndex) {
-    case 0:
+    if (themeIndex === 0) {
         themesWrapper.find('.fifth').css("background-color", colors[4]);
         themesWrapper.find('.forth').css("background-color", colors[3]);
         themesWrapper.find('.third').css("background-color", colors[2]);
         themesWrapper.find('.second').css("background-color", colors[1]);
         themesWrapper.find('.first').css("background-color", colors[0]);
-        break;
-    case 1:
+    }
+    if (themeIndex === 1) {
         themesWrapper.find('.fifth').css("background-color", colors[5]);
         themesWrapper.find('.forth').css("background-color", colors[4]);
         themesWrapper.find('.third').css("background-color", colors[3]);
         themesWrapper.find('.second').css("background-color", colors[2]);
         themesWrapper.find('.first').css("background-color", colors[1]);
-        break;
-    case 2:
+    }
+    if (themeIndex === 2) {
         themesWrapper.find('.fifth').css("background-color", colors[0]);
         themesWrapper.find('.forth').css("background-color", colors[5]);
         themesWrapper.find('.third').css("background-color", colors[4]);
         themesWrapper.find('.second').css("background-color", colors[3]);
         themesWrapper.find('.first').css("background-color", colors[2]);
-        break;
-    case 3:
+    }
+    if (themeIndex === 3) {
         themesWrapper.find('.fifth').css("background-color", colors[1]);
         themesWrapper.find('.forth').css("background-color", colors[0]);
         themesWrapper.find('.third').css("background-color", colors[5]);
         themesWrapper.find('.second').css("background-color", colors[4]);
         themesWrapper.find('.first').css("background-color", colors[3]);
-        break;
-    case 4:
+    }
+    if (themeIndex === 4) {
         themesWrapper.find('.fifth').css("background-color", colors[2]);
         themesWrapper.find('.forth').css("background-color", colors[1]);
         themesWrapper.find('.third').css("background-color", colors[0]);
         themesWrapper.find('.second').css("background-color", colors[5]);
         themesWrapper.find('.first').css("background-color", colors[4]);
-        break;
-    case 5:
+    }
+    if (themeIndex === 5) {
         themesWrapper.find('.fifth').css("background-color", colors[3]);
         themesWrapper.find('.forth').css("background-color", colors[2]);
         themesWrapper.find('.third').css("background-color", colors[1]);
         themesWrapper.find('.second').css("background-color", colors[0]);
         themesWrapper.find('.first').css("background-color", colors[5]);
-        break;
     }
     themeIndex += 1;
     if (themeIndex >= colors.length) {
@@ -92,8 +91,9 @@ var resetTheme = function () {
 };
 
 var showNextTheme = function () {
-    var time = new Date().getTime();
-    if (time - 0 > 2000) {
+    var now = new Date().getTime();
+    if (now - lastTimeChecked > 2000) {
+        lastTimeChecked = new Date().getTime();
         if (themesWrapper.is(":visible")) {
             slideWrapper.css("background-color", colors[themeIndex]);
             themesWrapper.find(".first").animate({
@@ -165,6 +165,11 @@ $(document).ready(function () {
                     $(this).addClass('active');
                 });
 
+                themesWrapper.delay(500).fadeIn(300, function () {
+                    showNextTheme();
+                    setTimeout(showNextTheme, 500);
+                });
+
             }
 
             if ((index === 2) && (direction === "up")) {
@@ -187,7 +192,7 @@ $(document).ready(function () {
                     $(this).addClass('active');
                 });
 
-
+                themesWrapper.fadeOut(300);
             }
 
             if ((index === 2) && (direction === "down")) {
@@ -208,6 +213,8 @@ $(document).ready(function () {
                 $('.fp-slides img.third').fadeIn(700, function () {
                     $(this).addClass('active');
                 });
+
+                themesWrapper.fadeOut(300);
 
             }
 
