@@ -44,42 +44,42 @@ $.fn.rotate = function (angle, duration, reverse) {
 var resetTheme = function () {
     if (themeIndex === 0) {
         themesWrapper.find('.fifth').css("background-color", colors[4]);
-        themesWrapper.find('.forth').css("background-color", colors[3]);
+        themesWrapper.find('.fourth').css("background-color", colors[3]);
         themesWrapper.find('.third').css("background-color", colors[2]);
         themesWrapper.find('.second').css("background-color", colors[1]);
         themesWrapper.find('.first').css("background-color", colors[0]);
     }
     if (themeIndex === 1) {
         themesWrapper.find('.fifth').css("background-color", colors[5]);
-        themesWrapper.find('.forth').css("background-color", colors[4]);
+        themesWrapper.find('.fourth').css("background-color", colors[4]);
         themesWrapper.find('.third').css("background-color", colors[3]);
         themesWrapper.find('.second').css("background-color", colors[2]);
         themesWrapper.find('.first').css("background-color", colors[1]);
     }
     if (themeIndex === 2) {
         themesWrapper.find('.fifth').css("background-color", colors[0]);
-        themesWrapper.find('.forth').css("background-color", colors[5]);
+        themesWrapper.find('.fourth').css("background-color", colors[5]);
         themesWrapper.find('.third').css("background-color", colors[4]);
         themesWrapper.find('.second').css("background-color", colors[3]);
         themesWrapper.find('.first').css("background-color", colors[2]);
     }
     if (themeIndex === 3) {
         themesWrapper.find('.fifth').css("background-color", colors[1]);
-        themesWrapper.find('.forth').css("background-color", colors[0]);
+        themesWrapper.find('.fourth').css("background-color", colors[0]);
         themesWrapper.find('.third').css("background-color", colors[5]);
         themesWrapper.find('.second').css("background-color", colors[4]);
         themesWrapper.find('.first').css("background-color", colors[3]);
     }
     if (themeIndex === 4) {
         themesWrapper.find('.fifth').css("background-color", colors[2]);
-        themesWrapper.find('.forth').css("background-color", colors[1]);
+        themesWrapper.find('.fourth').css("background-color", colors[1]);
         themesWrapper.find('.third').css("background-color", colors[0]);
         themesWrapper.find('.second').css("background-color", colors[5]);
         themesWrapper.find('.first').css("background-color", colors[4]);
     }
     if (themeIndex === 5) {
         themesWrapper.find('.fifth').css("background-color", colors[3]);
-        themesWrapper.find('.forth').css("background-color", colors[2]);
+        themesWrapper.find('.fourth').css("background-color", colors[2]);
         themesWrapper.find('.third').css("background-color", colors[1]);
         themesWrapper.find('.second').css("background-color", colors[0]);
         themesWrapper.find('.first').css("background-color", colors[5]);
