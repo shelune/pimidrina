@@ -375,22 +375,67 @@ ul {
 
 .mail-us, .follow-us {
     display: inline-block;
+    width: 300px;
+    margin: 30px;
+    vertical-align: top;
+}
 
+.follow-us h3, .mail-us h3 {
+    text-indent: -100000px;
+}
+
+.mail-us h3, .follow-us h3 {
+    background: url('../img/followus.png') no-repeat scroll center center;
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    height: 20px;
+}
+
+.follow-us a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.21);
+    line-height: 48px;
+    display: inline-block;
+    margin: 0 4px;
+    opacity: 0.7;
+}
+
+
+.mail-us h3 {
+    background: url('../img/mailus.png') no-repeat scroll center center;
+}
+
+.mail-us a {
+    line-height: 47px;
 }
 
 .lower-footer {
     border-top: 1px solid #353B4A;
-    display: block;
     line-height: 64px;
 }
 
-.lower-footer li {
-    display: inline-block;
-    padding: 0 20px;
+.copyright ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: row;
+    -webkit-flex: row nowrap;
+    -ms-flex: row nowrap;
+    flex: row nowrap;
+    margin-top: 0;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
 }
 
 .lower-footer a {
     opacity: 0.34;
+    padding: 0 20px;
 }
 
 .lower-footer a:hover {
